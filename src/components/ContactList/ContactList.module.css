@@ -1,0 +1,33 @@
+.list {
+  background-color: rgb(114, 95, 31);
+  padding: 20px;
+  width: 300px;
+  margin-top: 5px;
+  margin-bottom: 0;
+  border-radius: 5px;
+  list-style: none;
+  color: rgb(114, 95, 31);
+}
+/* .list li:nth-child(2n) {
+  color: rosybrown;
+} */
+.list li {
+  background-color: rgb(218, 207, 120);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+}
+.button {
+  /* background-color: rgb(122, 118, 109); */
+  background-color: rgba(154, 104, 10, 0.461);
+  border-radius: 5px;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+
+  text-transform: uppercase;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+}

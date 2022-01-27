@@ -1,0 +1,20 @@
+.input {
+  border-radius: 5px;
+  border: none;
+  height: 15px;
+  width: 225px;
+  padding-left: 10px;
+}
+.label {
+  color: rgb(218, 207, 120);
+  font-size: 18px;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+  background-color: rgb(114, 95, 31);
+}

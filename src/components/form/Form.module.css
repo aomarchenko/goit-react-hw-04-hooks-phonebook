@@ -1,0 +1,46 @@
+.formTitle {
+  color: rgb(218, 207, 120);
+  width: 300px;
+  padding: 20px;
+  background-color: rgb(114, 95, 31);
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+  background-color: rgb(114, 95, 31);
+}
+.label {
+  color: rgb(218, 207, 120);
+  font-size: 18px;
+}
+.input {
+  border-radius: 5px;
+  border: none;
+  height: 15px;
+  width: 225px;
+  position: absolute;
+  left: 100px;
+  padding-left: 10px;
+}
+.input:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+.button {
+  background-color: orange;
+  border-radius: 5px;
+  border: none;
+  color: rgb(114, 95, 31);
+  font-size: 18px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  height: 25px;
+}

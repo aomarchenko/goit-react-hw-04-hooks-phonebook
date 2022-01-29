@@ -42,6 +42,10 @@ export default function Phonebook() {
     setFilter(event.currentTarget.value);
   };
 
+  const deleteContact = contactId => {
+    setContacts(contacts => contacts.filter(contact => contact.id !== contactId));
+  };
+
   console.log(contacts);
   const normalizedFilter = filter.toLocaleLowerCase();
   const filteredContacts = contacts.filter(contact =>
@@ -51,7 +55,9 @@ export default function Phonebook() {
   return (
     <>
       <Form onSubmit={addContact} />
-      {contacts.length > 0 && <ContactList contacts={filteredContacts} onDeleteContact={0} />}
+      {contacts.length > 0 && (
+        <ContactList contacts={filteredContacts} onDeleteContact={deleteContact} />
+      )}
       {contacts.length > 1 && <Filter value={filter} onChange={changeFilter} />}
     </>
   );

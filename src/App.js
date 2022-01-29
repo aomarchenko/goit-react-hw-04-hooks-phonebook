@@ -5,7 +5,7 @@ import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
 // import React, { Component } from 'react';
 import shortid from 'shortid';
-export default function Phonebook(filteredContacts) {
+export default function Phonebook() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [filter, setFilter] = useState('');
@@ -35,15 +35,24 @@ export default function Phonebook(filteredContacts) {
       alert(`${name} is already in contacts`);
       return;
     }
-    setContacts(...contacts, newContact);
+    setContacts(contacts => [...contacts, newContact]);
   };
+
+  const changeFilter = event => {
+    setFilter(event.currentTarget.value);
+  };
+
   console.log(contacts);
+  const normalizedFilter = filter.toLocaleLowerCase();
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(normalizedFilter),
+  );
 
   return (
     <>
       <Form onSubmit={addContact} />
       {contacts.length > 0 && <ContactList contacts={filteredContacts} onDeleteContact={0} />}
-      {contacts.length > 1 && <Filter value={filter} onChange={0} />}
+      {contacts.length > 1 && <Filter value={filter} onChange={changeFilter} />}
     </>
   );
 }

@@ -20,10 +20,17 @@ export default function Phonebook() {
     setContacts(...contacts, newContact);
   };
 
-  // useEffect(() => {
-  //   toSetContact();
-  // }, []);
-  // console.log(contacts);
+  useEffect(() => {
+    if (localStorage.getItem('contacts') !== null) {
+      const contacts = localStorage.getItem('contacts');
+      const parcedContacts = JSON.parse(contacts);
+      setContacts(contacts => parcedContacts);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   const addContact = (name, number) => {
     const newContact = {
@@ -46,7 +53,6 @@ export default function Phonebook() {
     setContacts(contacts => contacts.filter(contact => contact.id !== contactId));
   };
 
-  console.log(contacts);
   const normalizedFilter = filter.toLocaleLowerCase();
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter),
